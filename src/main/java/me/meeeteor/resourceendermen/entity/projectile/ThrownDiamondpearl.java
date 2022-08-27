@@ -22,20 +22,20 @@ public class ThrownDiamondpearl extends ThrownEnderpearl {
     protected void onHit(HitResult pResult) {
         super.onHit(pResult);
 
-        if(!this.level.isClientSide && !this.isRemoved()){
+        if(!this.level.isClientSide){
             Entity entity = this.getOwner();
             if(entity instanceof ServerPlayer){
                 ServerPlayer serverplayer = (ServerPlayer) entity;
                 if(serverplayer.connection.getConnection().isConnected() && serverplayer.level == this.level && !serverplayer.isSleeping()){
                     EntityTeleportEvent.EnderPearl event = net.minecraftforge.event.ForgeEventFactory.onEnderPearlLand(serverplayer, this.getX(), this.getY(), this.getZ(), this, 5.0F);
                     if(!event.isCanceled()) { //Don't indent to lower patch size
-                    this.getOwner().sendMessage(new TextComponent("Will you get a diamond?"),this.getOwner().getUUID()); //this doesn't run
+                    this.getOwner().sendMessage(new TextComponent("Will you get a diamond?"),this.getOwner().getUUID());
                     if(this.random.nextFloat() < 0.5F){
                         ItemEntity diamond = EntityType.ITEM.create(this.level);
                         diamond.setItem(new ItemStack(Items.DIAMOND));
                         diamond.moveTo(entity.getX(), entity.getY(), entity.getZ(), entity.getYRot(), entity.getXRot());
                         this.level.addFreshEntity(diamond);
-                        entity.sendMessage(new TextComponent("You got a diamond!"), entity.getUUID()); //this doesn't run
+                        entity.sendMessage(new TextComponent("You got a diamond!"), entity.getUUID());
                     }
                     }
                 }
@@ -43,7 +43,7 @@ public class ThrownDiamondpearl extends ThrownEnderpearl {
         }
 
 
-        this.getOwner().sendMessage(new TextComponent("pearl landed"), this.getOwner().getUUID()); //this works
+        this.getOwner().sendMessage(new TextComponent("pearl landed"), this.getOwner().getUUID());
 
     }
 }
