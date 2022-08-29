@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "resourceendermen:iron_pearl",
+    "resourceendermen:copper_pearl",
+    "resourceendermen:gold_pearl",
+    "resourceendermen:diamond_pearl",
+    "resourceendermen:emerald_pearl",
+    "resourceendermen:quartz_pearl",
+    "resourceendermen:blaze_pearl"
+  ]
+}
