@@ -1,7 +1,7 @@
 package me.meeeteor.resourceendermen.entity.projectile;
 
+import me.meeeteor.resourceendermen.OptionsHolder;
 import me.meeeteor.resourceendermen.item.ModItems;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -36,7 +36,7 @@ public class ThrownDiamondpearl extends ThrownEnderpearl {
                 if(serverplayer.connection.getConnection().isConnected() && serverplayer.level == this.level && !serverplayer.isSleeping()){
                     EntityTeleportEvent.EnderPearl event = net.minecraftforge.event.ForgeEventFactory.onEnderPearlLand(serverplayer, this.getX(), this.getY(), this.getZ(), this, 5.0F);
                     if(!event.isCanceled()) { //Don't indent to lower patch size
-                    if(this.random.nextFloat() < 0.5F){
+                    if(this.random.nextFloat() < OptionsHolder.COMMON.diamondDropChance.get()){
                         ItemEntity diamond = EntityType.ITEM.create(this.level);
                         diamond.setItem(new ItemStack(Items.DIAMOND));
                         diamond.moveTo(entity.getX(), entity.getY(), entity.getZ(), entity.getYRot(), entity.getXRot());
