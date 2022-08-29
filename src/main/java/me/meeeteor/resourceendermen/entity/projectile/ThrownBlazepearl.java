@@ -22,7 +22,7 @@ public class ThrownBlazepearl extends ThrownEnderpearl {
 
     @Override
     protected Item getDefaultItem() {
-        return ModItems.DIAMOND_PEARL.get();
+        return ModItems.BLAZE_PEARL.get();
     }
 
     @Override
