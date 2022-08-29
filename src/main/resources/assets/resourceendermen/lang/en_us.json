@@ -1,4 +1,10 @@
 {
+  "item.resourceendermen.iron_pearl": "Iron Pearl",
+  "item.resourceendermen.copper_pearl": "Copper Pearl",
+  "item.resourceendermen.gold_pearl": "Gold Pearl",
   "item.resourceendermen.diamond_pearl": "Diamond Pearl",
+  "item.resourceendermen.emerald_pearl": "Emerald Pearl",
+  "item.resourceendermen.quartz_pearl": "Quartz Pearl",
+  "item.resourceendermen.blaze_pearl": "Blaze Pearl",
   "itemGroup.resourceendermentab": "Resource Endermen"
 }
